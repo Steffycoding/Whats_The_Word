@@ -37,12 +37,12 @@ def play_again():
     return answer == 'yes' or answer == 'y'
 
 def guess_word():
-    max_attempts = 6
+    max_attempts = 5
     word_to_guess = choose_word()
     guessed_letters = []
     attempts = 0
 
-    print(colored("Welcome to 'What's the word?' game!", "green"))
+    print(colored("Welcome to 'What's the word?'!", "green"))
     print(display_word(word_to_guess, guessed_letters))
 
     while attempts < max_attempts:
@@ -50,7 +50,7 @@ def guess_word():
         print(current_display)
         print(display_attempts(max_attempts - attempts))
 
-        guess = input(colored("Enter a letter: ", "purple")).lower()
+        guess = input(colored("Enter a letter: ", "magenta")).lower()
 
         if not guess.isalpha() or len(guess) != 1:
             print(colored("Please enter a single alphabet.", "yellow"))
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     import pickle
     import os
 
-    print(colored("Welcome to Hangman!", "blue"))
+    print(colored("Welcome to What's the word!", "blue"))
     player_name = input("Enter your name: ")
     player_password = input("Choose a password: ")
 
